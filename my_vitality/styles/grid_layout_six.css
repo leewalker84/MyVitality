@@ -1,0 +1,107 @@
+#container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "top-footer"
+    "footer";
+    grid-template-rows: minmax(min-content, 100px) auto minmax(600px, auto) auto minmax(min-content, 50px);
+    grid-template-columns: 1fr;
+    min-height: 100%;
+}
+#main-section {
+    background-color: #f0f2ef;
+    grid-area: main;
+    padding-top: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+#main-section > h1 {
+    text-align: center;
+}
+
+.supplement-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill);
+    grid-gap: 1.5em;
+    padding-top: 1.5vh;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+@media only screen and (max-device-width : 1000px) {
+    .supplement-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-device-width : 775px) {
+    .supplement-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-device-width : 480px) {
+    .supplement-row {
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #main-section {
+        background-color: #f0f2ef;
+        grid-area: main;
+        padding-top: 1vh;
+        padding-left: 0vw;
+        padding-right: 0vw;
+        padding-left: 0vw;
+        padding-right: 0vw;
+    }
+    #main-section > h1 {
+        text-align: center;
+    }
+    .search_form {
+        display: grid;
+        grid-template-columns: [labels] auto [controls] 1fr;
+        grid-auto-flow: row;
+        grid-gap: 1em;
+        padding: 1em;
+    }
+}
+.supplement-row section {
+    border-bottom-width: thin;
+    border-bottom-style: dotted;
+    border-color: #bdc2bd;
+}
+.prod-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px
+    padding-top: 1em;
+    width: 100%;
+    height: 100%;
+}
+.product-info {
+    clear: both;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.75em;
+}
+.columnOne figure {
+    margin-bottom: 1.75em;
+}
+.columnOne p {
+    text-align: center;
+}
+.align-left {
+    padding-left: 0.2em;
+    padding-right: 1em;
+
+}
+.align-right {
+    padding-left: 1em;
+    padding-right: 0.2em;
+}

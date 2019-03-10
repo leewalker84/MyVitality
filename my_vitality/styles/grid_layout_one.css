@@ -1,0 +1,58 @@
+/* define page structure */
+#container {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "col-one col-two col-three"
+    "top-footer top-footer top-footer"
+    "footer footer footer";
+    grid-template-rows: minmax(min-content, 100px) auto minmax(min-content, 400px) minmax(min-content, 400px) auto minmax(min-content, 50px);
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100%;
+}
+@media only screen and (max-device-width : 960px) {
+    #container {
+        display: grid;
+        grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "col-one"
+        "col-two" 
+        "col-three"
+        "top-footer"
+        "footer";
+        grid-template-rows: minmax(min-content, 75px) auto minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 75px) minmax(min-content, 50px);
+        grid-template-columns: 1fr;
+    }
+    #columnOne, #columnTwo {
+        border-bottom-width: thin;
+        border-bottom-style: solid;
+        border-color: #e3e5e3;
+    }
+}
+#mainArticle {
+    background-color: #e3e5e3;
+    grid-area: main;
+    text-align: center;
+}
+#columnOne, #columnTwo, #columnThree {
+    background-color: #f0f2ef;
+    display: grid;
+    text-align: center;
+    grid-template-rows: minmax(min-content, min-content) 160px minmax(min-content, auto);
+    grid-gap: 0.2em;
+    padding: 0.2em;
+    padding-top: 1.5vh;
+}
+#columnOne {
+    grid-area: col-one;
+}
+#columnTwo {
+    grid-area: col-two;
+}
+#columnThree {
+    grid-area: col-three;
+}

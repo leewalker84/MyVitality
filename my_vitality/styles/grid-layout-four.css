@@ -1,0 +1,23 @@
+/* define page structure */
+#container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+    grid-template-rows: minmax(min-content, 100px) auto minmax(600px, auto) minmax(min-content, 50px);
+    grid-template-columns: auto;
+    min-height: 100%;
+}
+
+#main-section {
+    background-color: #f0f2ef;
+    grid-area: main;
+}
+#main-section > h1 {
+    text-align: center;
+}
+#add-stock-form p {
+    margin-bottom: 0.2em;
+}

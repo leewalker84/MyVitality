@@ -1,0 +1,193 @@
+/* define page structure */
+#container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "section_one"
+    "section_two"
+    "top-footer"
+    "footer";
+    grid-template-rows: minmax(min-content, 100px) auto minmax(min-content, 400px) minmax(min-content, 400px) auto minmax(min-content, 50px);
+    grid-template-columns: 1fr;
+}
+#section_one {
+    background-color: #e3e5e3;
+    display: grid;
+    grid-area: section_one;
+    grid-template-areas:
+    "head head head"
+    "col-one col-two col-three";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    padding-top: 1.5vh;
+}
+#section_two {
+    background-color: #f0f2ef;
+    display: grid;
+    grid-area: section_two;
+    grid-template-areas:
+    "f-head l-head"
+    "form location";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 1.5vh;
+}
+/* nested grids for section one */
+#section_one > h1 {
+    grid-area: head;
+}
+#columnOne {
+    display: grid;
+    grid-area: col-one;
+    text-align: center;
+    grid-template-rows: [img] 150px [info-head] auto [info-text] auto;
+    grid-auto-flow: column;
+    grid-gap: 0.2em;
+    padding: 0.2em;
+    padding-top: 1.5vh;
+}
+#columnTwo {
+    display: grid;
+    grid-area: col-two;
+    text-align: center;
+    grid-template-rows: [img] 150px [info-head] auto [info-text] auto;
+    grid-auto-flow: column;
+    grid-gap: 0.2em;
+    padding: 0.2em;
+}
+#columnThree {
+    display: grid;
+    grid-area: col-three;
+    text-align: center;
+    grid-template-rows: [img] 150px [info-head] auto [info-text] auto;
+    grid-auto-flow: column;
+    grid-gap: 0.2em;
+    padding: 0.2em;
+    padding-top: 1.5vh;
+}
+.img {
+    grid-column: auto;
+    grid-row: img;
+    padding-top: 1.5vh;
+    }
+.info-head {
+    grid-column: auto;
+    grid-row: info-head;
+    padding-top: 1.5vh;
+}
+.info-text {
+    grid-column: auto;
+    grid-row: info-text;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+/* nested grids for section two */
+#f-head {
+    grid-area: f-head;
+    text-align: center;
+}
+#column_left {
+    grid-area: form;
+    display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr;
+    grid-auto-flow: row;
+    grid-gap: 1em;
+    padding: 1em;
+}
+#l-head {
+    grid-area: l-head;
+    text-align: center;
+}
+#column_right {
+    grid-area: location;
+}
+.img-map {
+    margin-top: 3.5vh;
+    margin-right: 1.5vh;
+    margin-bottom: 3.5vh;
+    margin-left: 1.5vh;
+}
+@media only screen and (max-device-width : 600px) {
+    #container {
+        display: grid;
+        grid-template-areas:
+        "header"
+        "nav"
+        "nav_two"
+        "section_one"
+        "section_two"
+        "top-footer"
+        "footer";
+        grid-template-rows: minmax(min-content, 75px) auto 5vh minmax(min-content, 400px) minmax(min-content, 400px) auto minmax(min-content, 50px);
+        grid-template-columns: 1fr;
+    }
+    #section_one {
+        background-color: #e3e5e3;
+        display: grid;
+        grid-area: section_one;
+        grid-template-areas:
+        "head"
+        "row-one"
+        "row-two"
+        "row-three";
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    #section_two {
+        background-color: #f0f2ef;
+        display: grid;
+        grid-area: section_two;
+        grid-template-areas:
+        "l-head"
+        "location "
+        "f-head "
+        "form";
+        "location"
+        "form";
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+    }
+    #section_one > h3 {
+        grid-area: head;
+    }
+    #columnOne {
+        display: grid;
+        grid-area: row-one;
+        text-align: center;
+        grid-template-rows: [img] 150px [info-head] auto [info-text] auto;
+        grid-auto-flow: column;
+        grid-gap: 0.2em;
+        padding: 0.2em;
+        border-bottom-width: thin;
+        border-bottom-style: solid;
+        border-color: #d7dad7;
+    }
+    #columnTwo {
+        display: grid;
+        grid-area: row-two;
+        text-align: center;
+        grid-template-rows: [img] 150px [info-head] auto [info-text] auto;
+        grid-auto-flow: column;
+        grid-gap: 0.2em;
+        padding: 0.8em 0.2em 0.2em 0.2em;
+        border-bottom-width: thin;
+        border-bottom-style: solid;
+        border-color: #d7dad7;
+    }
+    #columnThree {
+        display: grid;
+        grid-area: row-three;
+        text-align: center;
+        grid-template-rows: [img] 150px [info-head] auto [info-text] auto;
+        grid-auto-flow: column;
+        grid-gap: 0.2em;
+        padding: 0.8em 0.2em 0.2em 0.2em;
+    }
+    #column_right {
+        padding-bottom: 5rem;
+    }
+}

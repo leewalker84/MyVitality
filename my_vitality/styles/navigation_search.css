@@ -1,0 +1,13 @@
+.navSearch {
+    display: flex;
+}
+.search_form {
+    margin-left: 0.5em;
+    margin-right: 1em;
+}
+.drop_down_label {
+    margin-right: 0.5em;
+}
+.drop_down_box {
+    margin-right: 1em;
+}

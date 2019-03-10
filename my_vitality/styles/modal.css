@@ -1,0 +1,20 @@
+form label {
+    float: left;
+	text-align: right;
+	margin-right: 15px;
+    margin-bottom: 5px;
+	width: 100px;
+}
+form input {
+    margin-bottom: 10px;
+    width: 150px;
+}
+.modal-header {
+    background-color: #94d4d3;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

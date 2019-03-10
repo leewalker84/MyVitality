@@ -1,0 +1,115 @@
+/* define page structure */
+#container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "top-footer"
+    "footer";
+    grid-template-rows: minmax(min-content, 100px) auto minmax(500px, auto) auto minmax(min-content, 50px);
+    grid-template-columns: 1fr;
+    min-height: 100%;
+}
+#main-section {
+    background-color: #f0f2ef;
+    grid-area: main;
+}
+h1 {
+    text-align: center;
+}
+
+@media only screen and (max-device-width : 750px) {
+    /* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+    /* Hide table headers */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+    tr {
+        border: thin solid #94d4d3;
+    }
+    td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: thin solid #d7dad7;
+		position: relative;
+		padding-left: 50%;
+	}
+    td:before {
+		/* act like a table header */
+		position: absolute;
+		/* Top/left mimics padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+    /*
+    Label data
+    */
+    td:nth-of-type(1):before {
+        content: "Supplier";
+    }
+    td:nth-of-type(2):before {
+        content: "Supplement";
+    }
+    td:nth-of-type(3):before {
+        content: "Price";
+    }
+    td:nth-of-type(4):before {
+        content: "Quantity";
+    }
+    td:nth-of-type(5):before {
+        content: "Subtotal";
+        text-align: left;
+    }
+    td:nth-of-type(6):before { content: "Change";
+        text-align: left;
+    }
+    td.align-center {
+        text-align: left;
+    }
+    .numeric-col {
+        text-align: left;
+    }
+
+    tfoot>tr>td:nth-of-type(1):before {
+        content: "";
+    }
+    tfoot>tr>td:nth-of-type(2):before {
+        content: "";
+    }
+    tfoot>tr>td:nth-of-type(3):before {
+        content: "";
+    }
+    tfoot>tr>td:nth-of-type(4):before {
+        content: "";
+    }
+    tfoot>tr>td:nth-of-type(5):before {
+        content: "";
+        text-align: left;
+    }
+    tfoot>tr>td:nth-of-type(6):before {
+        content: "";
+        text-align: left;
+    }
+    tfoot>tr>td:nth-of-type(1) {
+        display:none;
+    }
+    tfoot>tr>td:nth-of-type(2) {
+        display:none;
+    }
+    tfoot>tr>td:nth-of-type(3) {
+        display:none;
+    }
+    tfoot>tr>td:nth-of-type(4) {
+        display:none;
+    }
+
+}

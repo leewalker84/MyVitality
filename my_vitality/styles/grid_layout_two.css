@@ -1,0 +1,110 @@
+/* header, nav, footer - see individual ccs files and grid_layout_(1,2,3.. ) */
+/* define page structure */
+#container {
+    background-color: #e3e5e3;
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "h1 h1 h1"
+    "col-one col-two col-three"
+    "section_two section_two section_two"
+    "top-footer top-footer top-footer"
+    "footer footer footer";
+    grid-template-rows: minmax(min-content, 100px) auto auto minmax(min-content, 400px) minmax(min-content, 400px) auto minmax(min-content, 50px);
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100%;
+}
+h1 {
+    background-color: #e3e5e3;
+    grid-area: h1;
+    text-align: center; 
+}
+#columnOne, #columnTwo, #columnThree {
+    background-color: #e3e5e3;
+    display: grid;
+    text-align: center;
+    grid-template-rows: 160px minmax(min-content, min-content) minmax(min-content, auto);
+    grid-gap: 0.2em;
+    padding: 0.2em;
+    padding-top: 1.5vh;
+}
+#columnOne {
+    grid-area: col-one;
+}
+#columnTwo {
+    grid-area: col-two;
+}
+#columnThree {
+    grid-area: col-three;
+}
+#section_two {
+    background-color: #f0f2ef;
+    display: grid;
+    grid-area: section_two;
+    grid-template-areas:
+    "f-head l-head"
+    "form location";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 1.5vh;
+}
+
+/* nested grids for section two */
+#f-head {
+    grid-area: f-head;
+    text-align: center;
+}
+#column_left {
+    grid-area: form;
+    display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr [errorMessage] auto;
+    grid-auto-flow: row;
+    grid-gap: 1em;
+    padding: 0em 1em 0em 1em;
+}
+#l-head {
+    grid-area: l-head;
+    text-align: center;
+}
+#map {
+    grid-area: location;
+    margin-right: 1.5vh;
+    margin-bottom: 3vh;
+    margin-left: 1.5vh;
+}
+@media only screen and (max-device-width : 700px) {
+    #container {
+        grid-template-areas:
+        "header"
+        "nav"
+        "h1"
+        "col-one"
+        "col-two"
+        "col-three"
+        "section_two"
+        "top-footer"
+        "footer";"
+        grid-template-rows: minmax(min-content, 100px) auto auto minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 400px) auto minmax(min-content, 50px);
+        grid-template-columns: 1fr;
+    }
+    #columnOne, #columnTwo {
+        border-bottom-width: thin;
+        border-bottom-style: solid;
+        border-color: #bdc2bd;
+        }
+    #columnOne, #columnTwo, #columnThree {
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+
+    #section_two {
+        grid-template-areas:
+        "f-head"
+        "form"
+        "l-head"
+        "location";
+        grid-template-rows: auto 40vh auto 40vh;
+        grid-template-columns: 1fr;
+    }
+}

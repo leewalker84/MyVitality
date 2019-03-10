@@ -1,0 +1,50 @@
+.btn-main, .btn-cancel, .btn-reject {
+    font-weight: 500;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    text-align: center;
+    text-decoration: none;
+}
+/* high contrast color scheme for button main as it provides a positive action */
+.btn-main {
+    background-color: #F18912;
+    border: 2px outset #d97a0d;
+    color:white;
+    /* outline-color - change active border color around button which has been selected */
+    outline-color: #172E3C;
+}
+.btn-main:hover, .btn-main:focus, .btn-main:active {
+    background: #d97a0d;
+}
+.btn-main:active {
+    background: #a95f0a;
+    box-shadow: none;
+}
+/* netral color scheme for button close as it makes no changes, just closes a window or returns to another page */
+.btn-cancel {
+    background-color: #e6e6e6;
+    border: 2px outset #cccccc;
+    color: #333333;
+}
+.btn-cancel:hover, .btn-cancel:focus, .btn-cancel:active {
+    background: #cccccc;
+}
+.btn-cancel:active {
+    background: #bfbfbf;
+    box-shadow: none;
+}
+/* high contrast color scheme for button main as it provides a positive action */
+.btn-reject {
+    background-color: #cc2900;
+    border: 2px outset #991f00;
+    color:white;
+    /* outline-color - change active border color around button which has been selected */
+    outline-color: #ffebe6;
+}
+.btn-reject:hover, .btn-reject:focus, .btn-reject:active {
+    background: #991f00;
+}
+.btn-reject:active {
+    background: #b32400;
+    box-shadow: none;
+}

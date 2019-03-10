@@ -1,0 +1,86 @@
+/* define page structure */
+#container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "top-footer"
+    "footer";
+    grid-template-rows: minmax(min-content, 100px) auto minmax(min-content, 500px) auto minmax(min-content, 50px);
+    grid-template-columns: 1fr;
+}
+#main {
+    background-color: #e3e5e3;
+    display: grid;
+    grid-area: main;
+    grid-template-areas:
+    "head head head"
+    "col-one col-two col-three";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    text-align: center;
+    padding-top: 1.5vh;
+}
+#mainHeading {
+    grid-area: head;
+    text-align: center;
+}
+#columnOne {
+    grid-area: col-one;
+}
+#columnTwo {
+    grid-area: col-two;
+}
+#columnThree {
+    grid-area: col-three;
+}
+.cus_form {
+    grid-area: form;
+    display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr;
+    grid-auto-flow: row;
+    grid-gap: 1em;
+    padding: 1em;
+}
+.bold {
+    font-weight: 600;
+}
+.extra_padding_bottom {
+    margin-bottom: 1.2em;
+}
+#columnThree > p {
+    padding-bottom: 0.5em;
+}
+#columnThree > button {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+@media only screen and (max-device-width : 960px) {
+    #main {
+        grid-template-areas:
+        "head"
+        "col-one"
+        "col-two"
+        "col-three";
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+    #columnTwo {
+        border-bottom-width: thin;
+        border-bottom-style: dotted;
+        border-color: #bdc2bd;
+    }
+    .center, #columnThree {
+        text-align: center;
+    }
+    .cus_form {
+        grid-template-columns: [labels] 175px [controls] 1fr;
+    }
+}
+@media only screen and (max-device-width : 480px) {
+    .cus_form {
+        grid-template-columns: [labels] 100px [controls] 1fr;
+    }
+}

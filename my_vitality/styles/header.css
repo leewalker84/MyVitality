@@ -1,0 +1,67 @@
+#mainHeader {
+    background-color: #172E3C;
+    grid-area: header;
+    grid-gap: 1vmin;
+    display: grid;
+    grid-template-areas:
+    "logo cart";
+    grid-template-columns: repeat(2, auto);
+    padding-top: 0.5vh;
+    font-size: 1.15em;
+}
+#logo {
+    grid-area: logo;
+    width: 25em;
+    height: 100%;
+}
+.cart {
+    color: #9DD8D7; /* same as logo */
+    grid-area: cart;
+    justify-self: end;
+    padding-top: 1em;
+    padding-right: 1em;
+}
+
+.glyphicon-shopping-cart {
+    padding-right: 0.5vw;
+}
+.cart:hover  {
+    color: #F18912;
+}
+@media only screen and (max-device-width : 960px) {
+    #logo {
+        width: 20em;
+    }
+}
+@media only screen and (max-device-width : 750px) {
+    #logo {
+        width: 17.5em;
+    }
+}
+
+@media only screen and (max-device-width : 550px) {
+    #logo {
+        width: 15em;
+    }
+}
+@media only screen and (max-device-width : 450px) {
+    #logo {
+        width: 12.5em;
+    }
+}
+@media only screen and (max-device-width : 350px) {
+    #logo {
+        width: 10em;
+    }
+}
+
+@media only screen and (max-device-width : 320px) {
+    .cart {
+        font-size: 0.8em;
+        padding-right: 1vw;
+        padding-top: 1.5vh;
+    }
+    #mainHeader {
+        grid-gap: 0px;
+    }
+}

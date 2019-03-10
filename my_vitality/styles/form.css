@@ -1,0 +1,85 @@
+/* assign labels to first column and then input and textarea to second */
+.cus_form {
+    margin-top: 3.5vh;
+    margin-right: 1.5vh;
+    margin-bottom: 3.5vh;
+    margin-left: 1.5vh;
+}
+.cus_form > label {
+    grid-column: labels;
+    grid-row: auto;
+}
+.cus_form > input, .cus_form > textarea {
+    grid-column: controls;
+    grid-row: auto;
+}
+.cus_form > .error {
+    grid-column: error;
+    grid-row: auto;
+}
+.error {
+    color: red;
+}
+.cus_form > button {
+    grid-column: controls;
+}
+label {
+    text-align: right;
+}
+.block {
+    display: block;
+}
+.center {
+    text-align: center;
+}
+.search_form > label {
+    grid-column: labels;
+    grid-row: auto;
+}
+.search_form > input {
+    grid-column: controls;
+    grid-row: auto;
+}
+.search_form > button {
+    grid-column: controls;
+}
+.contact_form {
+    margin-top: 0vh;
+    padding-top: 0vh;
+}
+.stack input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.forgot-password-text{
+    color: #80BCBB;
+}
+.forgot-password-text:hover {
+    color: #F18912;
+}
+.forgot-password-text:active {
+    color: #F18912;
+}
+.forgot-password-text:focus {
+    color: #F18912;
+    text-decoration: none;
+}
+
+@media only screen and (max-device-width : 480px) {
+    .search_form > label {
+        grid-column: labels;
+        grid-row: auto;
+    }
+    .search_form > select{
+        grid-column: controls;
+        grid-row: auto;
+
+    }
+    .search_form > button {
+        grid-column: controls;
+    }
+    .search_form > .drop_down_box {
+        margin-right: 0px;
+    }
+}

@@ -1,0 +1,108 @@
+/* define page structure */
+#container {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "col-one col-two col-three"
+    "main main main"
+    "top-footer top-footer top-footer"
+    "footer footer footer";
+    grid-template-rows: minmax(min-content, 100px) auto minmax(min-content, 400px) minmax(min-content, 400px) auto minmax(min-content, 50px);
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100%;
+}
+@media only screen and (max-device-width : 960px) {
+    #container {
+        display: grid;
+        grid-template-areas:
+        "header"
+        "nav"
+        "col-one"
+        "col-two"
+        "col-three"
+        "main"
+        "top-footer"
+        "footer";
+        grid-template-rows: minmax(min-content, 75px) auto minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 400px) minmax(min-content, 75px) minmax(min-content, 50px);
+        grid-template-columns: 1fr;
+    }
+    #columnOne, #columnTwo {
+        border-bottom-width: thin;
+        border-bottom-style: solid;
+        border-color: #e3e5e3;
+    }
+}
+#mainSection {
+    background-color: #e3e5e3;
+    grid-area: main;
+    text-align: center;
+}
+#columnOne, #columnTwo, #columnThree {
+    background-color: #f0f2ef;
+    display: grid;
+    text-align: center;
+    grid-template-rows: minmax(min-content, min-content) 160px minmax(min-content, auto);
+    grid-gap: 0.4em;
+    padding: 0.2em;
+    padding-top: 1.5vh;
+}
+#columnOne {
+    grid-area: col-one;
+}
+#columnTwo {
+    grid-area: col-two;
+}
+#columnThree {
+    grid-area: col-three;
+}
+
+@media only screen and (max-device-width : 600px) {    
+    /* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+    /* Hide table headers */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+    tr {
+        border: thin solid #94d4d3;
+    }
+    td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: thin solid #d7dad7;
+		position: relative;
+		padding-left: 50%;
+	}
+    td:before {
+		/* act like a table header */
+		position: absolute;
+		/* Top/left mimics padding */
+		top: 6px;
+		left: 2rem;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+    /*
+    Label data
+    */
+    td:nth-of-type(1):before { content: "Supplier"; }
+    td:nth-of-type(2):before { content: "Supplement"; }
+    td:nth-of-type(3):before { content: "Price"; }
+    td:nth-of-type(4):before { content: "Quantity"; }
+    td:nth-of-type(5):before { content: "Subtotal"; }
+    td:nth-of-type(6):before { content: "Change"; }
+
+    .numeric-col {
+        text-align: left;
+    }
+    #mainSection {
+        text-align: left;
+    }
+
+}

@@ -1,0 +1,190 @@
+/* define page structure */
+* {
+    box-sizing: border-box;
+}
+#container {
+    background-color: #e3e5e3;
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+    grid-template-rows: 100px auto auto 50px;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+}
+.main > * {
+    padding: 0.5em;
+}
+.main {
+    grid-area: main;
+    display: grid;
+    grid-auto-rows: minmax(125px, auto);
+    grid-gap: 0.5em;
+    align-items: center;
+}
+.main section {
+    background-color: white;
+}
+section h3 {
+    padding-left: 5rem;
+}
+section p {
+    padding-left: 7.5rem;
+}
+@media screen and (min-width: 1200px) {
+    .main {
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 1em;
+        align-items: stretch;
+    }
+    .main section:nth-child(1) { /* profit */
+        grid-column: 1 / span 1; /* 1st column, span 1 column */
+        grid-row: 1 / span 1;   /* 1st row, span 1 row */
+    }
+    .main section:nth-child(2) { /* tax */
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+    }
+    .main section:nth-child(3) { /* sales */
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+    .main section:nth-child(4) { /* avg order */
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1; /* 2nd row, span 1 row */
+    }
+
+    .main section:nth-child(5) { /* total */
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+    }
+    .main section:nth-child(6) { /* cancel */
+        grid-column: 4 / span 1;
+        grid-row: 1 / span 1;
+    }
+    .main section:nth-child(7) { /* pending */
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+    }
+    .main section:nth-child(8) { /* to ship */
+        grid-column: 4 / span 1;
+        grid-row: 2 / span 1;
+    }
+    .main section:nth-child(9) { /* sup sold */
+        grid-column: 5 / span 2; /* 5th column, span 2 column */
+        grid-row: 1 / span 2;
+    }
+    .main section:nth-child(10) { /* reg sold */
+        grid-column: 7 / span 2;
+        grid-row: 1 / span 2;
+    }
+    .main section:nth-child(11) { /* re-order */
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1
+    }
+    .main section:nth-child(12) { /* re-order 10% */
+        grid-column: 2 / span 1;
+        grid-row: 5 / span 1
+    }
+    .main section:nth-child(13) { /* not order month */
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 2
+    }
+    .main section:nth-child(14) { /* not order year */
+        grid-column: 3 / span 2;
+        grid-row: 3 / span 2
+    }
+    .main section:nth-child(15) { /* top ten */
+        grid-column: 5 / span 4;
+        grid-row: 3 / span 2;
+    }
+    .main section:nth-child(16) { /* low profit */
+        grid-column: 1 / span 1;
+        grid-row: 6 / span 1
+    }
+    .main section:nth-child(17) { /* high profit */
+        grid-column: 2 / span 1;
+        grid-row: 6 / span 1
+    }
+    .main section:nth-child(18) { /* reffered by */
+        grid-row: 5 / span 2;
+        grid-column: 3 / span 6;
+        overflow: auto;
+    }
+    .boxes h3, .boxes p {
+        text-align: center;
+    }
+    section h3 {
+        padding-left: 0rem;
+    }
+    section p {
+        padding-left: 5rem;
+    }
+
+} /* end media query */
+
+@media only screen and (max-device-width : 1200px) {
+    section.boxes > figure {
+        width: 1150px;
+    }
+
+}
+@media only screen and (max-device-width : 1100px) {
+    section.boxes > figure {
+        width: 1050px;
+    }
+
+}
+@media only screen and (max-device-width : 1000px) {
+    section.boxes > figure {
+        width: 950px;
+    }
+
+}
+@media only screen and (max-device-width : 900px) {
+    section.boxes > figure {
+        width: 850px;
+    }
+
+}
+@media only screen and (max-device-width : 800px) {
+    section.boxes > figure {
+        width: 750px;
+    }
+
+}
+@media only screen and (max-device-width : 700px) {
+    section.boxes > figure {
+        width: 650px;
+    }
+
+}
+@media only screen and (max-device-width : 600px) {
+    section.boxes > figure {
+        width: 550px;
+    }
+
+}
+@media only screen and (max-device-width : 500px) {
+    section.boxes > figure {
+        width: 450px;
+    }
+
+}
+@media only screen and (max-device-width : 400px) {
+    section.boxes > figure {
+        width: 350px;
+    }
+
+}
+@media only screen and (max-device-width : 300px) {
+    section.boxes > figure {
+        width: 250px;
+    }
+
+}
+.overflow {
+     overflow-x:auto;
+}

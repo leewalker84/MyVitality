@@ -1,0 +1,108 @@
+/* define page structure */
+* {
+    box-sizing: border-box;
+}
+#container {
+    background-color: #e3e5e3;
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-rows: 100px 1fr 50px;
+    grid-template-columns: auto;
+    min-height: 100vh;
+}
+#main {
+    background-color: #e3e5e3;
+    grid-area: main;
+    text-align: center;
+}
+.log_in_form {
+    background-color: #172E3C;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    margin: 7.5em auto;
+}
+.new_password_form {
+    display: flex;
+    flex-direction: column;
+    margin: 0em auto;
+}
+.new_password_form > input {
+    padding: 0.5em;
+    margin: 0em 1em 1em 1em;
+
+}
+.modal-body > h3 {
+    text-align: center;
+
+}
+.log_in_form h1 {
+    color: #e6e6e6;
+    font-weight: 400;
+}
+p a {
+    color: #9DD8D7;
+}
+p a:hover {
+    color: #F18912;
+}
+.log_in_form > input {
+    padding: 0.5em;
+    margin: 0em 1em 1em 1em;
+
+}
+.log_in_form > p, .log_in_form > h1 {
+    text-align: center;
+}
+.text-box:invalid {
+  background-color: #ffe6f3;
+}
+.text-box:valid {
+  background-color: #ffffff;
+}
+.modal-header {
+    background-color: #172E3C;
+    color: #e6e6e6;
+}
+
+@media only screen and (max-device-width : 1200px) {
+    .log_in_form {
+        width:40%;
+    }
+}
+@media only screen and (max-device-width : 960px) {
+    .log_in_form {
+        width:50%;
+    }
+}
+@media only screen and (max-device-width : 760px) {
+    .log_in_form {
+        width:60%;
+    }
+}
+
+@media only screen and (max-device-width : 480px) {
+    .log_in_form {
+        width:70%;
+    }
+}
+
+@media only screen and (max-device-width : 380px) {
+    .log_in_form {
+        width:80%;
+    }
+}
+@media only screen and (max-device-width : 350px) {
+    .log_in_form {
+        width:90%;
+    }
+}
+@media only screen and (max-device-width : 250px) {
+    .log_in_form {
+        width:100%;
+    }
+}

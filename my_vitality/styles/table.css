@@ -1,0 +1,127 @@
+table {
+    margin: 3.5rem auto;
+    width: minmax(100vw, auto);
+}
+
+@media only screen and (max-device-width : 1200px) {
+    .mobile-table {
+        margin: 3.5rem 5rem;
+    }
+
+}
+.supplier_modal {
+    margin: 1rem 0.5rem;
+    width: minmax(100vw, auto);
+}
+th {
+    font-weight: 500;
+}
+.mis-table-row > th {
+    padding: 1.5rem 1rem 1.5rem 1rem;
+}
+.mis-table-row > td {
+    padding: 1rem 1rem 1rem 1rem;
+}
+.heading {
+    padding: 2rem 3rem 3rem 3rem;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-color: #94d4d3;
+    white-space: nowrap;
+    text-align: center;
+}
+.modal_heading {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-color: #94d4d3;
+    text-align: left;
+}
+.mis-talble-heading {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-color: #94d4d3;
+    text-align: center;
+}
+
+tr {
+    border-bottom-width: thin;
+    border-bottom-style: dotted;
+    border-color: #94d4d3;
+}
+tr > td {
+    padding: 3rem;
+    white-space: nowrap;
+}
+tr.modal_row > th {
+    font-size: 1.4rem;
+}
+.modal_row > td {
+    padding: 1.6rem;
+    font-size: 1.4rem;
+}
+
+.modal_data {
+    padding: 0rem;
+    text-align: left;
+}
+.numeric-col {
+    text-align: right;
+}
+.clickable:link {
+    color: #172E3C;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.clickable:visited {
+    color: #172E3C;
+    font-weight: 500;
+}
+.clickable:hover {
+    color: #F18912;
+    font-weight: 500;
+}
+.clickable:active {
+    color: #172E3C;
+}
+.status {
+    font-weight: 500;
+    color: red;
+}
+.admin-form-element {
+    margin-top: 0em;
+    margin-bottom: 1em;
+}
+.address {
+    text-align: left;
+}
+.left-align tr  th, .left-align tr  td  {
+    text-align: left;
+}
+.center-align {
+    text-align: center;
+}
+.right-align {
+    text-align: right;
+}
+@media only screen and (max-device-width : 960px) {
+    .cart {
+        margin: 3.5rem 0px;
+        width: minmax(100vw, auto);
+    }
+    .heading {
+        padding: 2rem 1rem 2rem 1rem;
+    }
+    .heading tbody tr td {
+        padding: 2rem 1rem 2rem 1rem;
+    }
+}
+@media only screen and (max-device-width : 800px) {
+    .heading {
+        padding: 2rem 0rem 2rem 0rem;
+    }
+    .heading tbody tr td {
+        padding: 2rem 0rem 2rem 0rem;
+    }
+}
