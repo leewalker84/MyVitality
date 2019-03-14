@@ -1,5 +1,10 @@
 <?php
 // the controller for the administration facing side to the application
+// first override the default 24 minutes a session lasts without inactivity
+$lifetime = 60 * 60 * 24 * 7; // seconds * minutes * hours * days = 1 week
+session_set_cookie_params($lifetime, '/');
+
+session_start();
 
 // import the files from the model
 require_once('../model/LoginDB.php');
@@ -37,13 +42,6 @@ require_once('../model/PurchaseJournalDB.php');
 require_once('../model/misDB.php');
 require_once('../util/HelperFunctions.php');
 require_once('../util/constants.php');
-
-// first override the default 24 minutes a session lasts without inactivity
-
-$lifetime = 60 * 60 * 24 * 7; // seconds * minutes * hours * days = 1 week
-session_set_cookie_params($lifetime, '/');
-
-session_start();
 
 if (!isset($_SESSION['database_error_message']) ) { // create session array to store errors
     $_SESSION['database_error_message'] = array();
