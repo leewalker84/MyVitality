@@ -1,4 +1,3 @@
-
 <?php
 class SupplementDB {
     // Static functions are associated with the class, not an instance of the class.
