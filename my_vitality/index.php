@@ -1,5 +1,10 @@
 <?php
+// first override the default 24 minutes a session lasts without inactivity
+$lifetime = 60 * 60 * 24 * 7; // seconds * minutes * hours * days = 1 week
+session_set_cookie_params($lifetime, '/');
 
+// start a session to store any shopping cart entries
+session_start();
 // the controller for the customer facing side to the application
 // include class files before creating the session - stops __PHP_Incomplete_Class error when loading custom objects into session array (https://stackoverflow.com/questions/2010427/php-php-incomplete-class-object-with-my-session-data)
 // import the files from the model
@@ -32,13 +37,6 @@ require_once('model/Bank.php');
 require_once('model/BankDB.php');
 require_once('util/HelperFunctions.php');
 require_once('util/constants.php');
-
-// first override the default 24 minutes a session lasts without inactivity
-$lifetime = 60 * 60 * 24 * 7; // seconds * minutes * hours * days = 1 week
-session_set_cookie_params($lifetime, '/');
-
-// start a session to store any shopping cart entries
-session_start();
 
 // if cart array doesnt exist, create an empty one
 if (!isset($_SESSION['cart']) ) { // store cart items / shopping basket
